@@ -25,15 +25,15 @@ jobs:
           channel: 'stable'
 
       - name: Get dependencies
-        working-directory: shazzysnap/frontend
+        working-directory: shazzysnap-fixed/frontend
         run: flutter pub get
 
       - name: Build APK
-        working-directory: shazzysnap/frontend
+        working-directory: shazzysnap-fixed/frontend
         run: flutter build apk --release
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: shazzysnap-apk
-          path: shazzysnap/frontend/build/app/outputs/flutter-apk/app-release.apk
+          path: shazzysnap-fixed/frontend/build/app/outputs/flutter-apk/app-release.apk
