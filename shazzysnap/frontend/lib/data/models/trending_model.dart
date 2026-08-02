@@ -1,5 +1,0 @@
-import '../../domain/entities/trending_entity.dart';
-class TrendingModel extends TrendingEntity {
-  const TrendingModel({required super.id,required super.title,super.description,required super.thumbnailUrl,required super.sourceUrl,required super.platform,super.author,super.viewCount,super.duration,required super.category,required super.publishedAt,required super.isDownloadable,required super.license});
-  factory TrendingModel.fromJson(Map<String,dynamic> j) => TrendingModel(id:j['id'] as String,title:j['title'] as String,description:j['description'] as String?,thumbnailUrl:j['thumbnail_url'] as String,sourceUrl:j['source_url'] as String,platform:j['platform'] as String,author:j['author'] as String?,viewCount:j['view_count'] as int?,duration:j['duration_seconds']!=null?Duration(seconds:(j['duration_seconds'] as num).toInt()):null,category:j['category'] as String??'General',publishedAt:j['published_at']!=null?DateTime.parse(j['published_at'] as String):DateTime.now(),isDownloadable:j['is_downloadable'] as bool??true,license:j['license'] as String??'Creative Commons');
-}
